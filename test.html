@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickReplyBot — Автоответчик для бизнеса</title>
+  <style>
+    body { font-family: Inter, sans-serif; margin: 0; padding: 0; background: #f6f9fc; color: #333; }
+    header { background: #fff; padding: 20px 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    .hero { padding: 60px 40px; text-align: center; background: #fff; }
+    .hero h2 { font-size: 36px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+    .cta a { display: inline-block; margin-top: 30px; background: #007bff; color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    .features { padding: 60px 40px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; background: #f0f4f8; }
+    .feature { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); width: 300px; }
+    .feature h3 { margin-top: 0; }
+    .demo { padding: 60px 40px; background: #fff; text-align: center; }
+    .demo h2 { font-size: 28px; margin-bottom: 20px; }
+    .demo p { max-width: 600px; margin: 0 auto 30px; }
+    .demo img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .pricing { padding: 60px 40px; text-align: center; background: #fff; }
+    .pricing h2 { font-size: 32px; margin-bottom: 20px; }
+    .plan { background: #f9fafb; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; margin: 10px auto; max-width: 400px; }
+    .plan h3 { margin: 0; }
+    .plan p.price { font-size: 24px; margin: 10px 0; color: #007bff; }
+    .feedback-form { background: #f0f4f8; padding: 60px 40px; text-align: center; }
+    .feedback-form h2 { font-size: 28px; margin-bottom: 20px; }
+    .feedback-form p { margin-bottom: 30px; }
+    form { max-width: 400px; margin: 0 auto; }
+    input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+    button { background: #007bff; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    footer { padding: 20px; text-align: center; font-size: 14px; background: #eef1f5; }
+    @media (max-width: 600px) { .features { flex-direction: column; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>QuickReplyBot</h1>
+</header>
+
+<section class="hero">
+  <h2>Не теряйте клиентов — автоответ за 2 минуты</h2>
+  <p>QuickReplyBot автоматически отвечает на первые сообщения клиентов в Telegram и WhatsApp. Подключите за 2 минуты и держите заявки под контролем.</p>
+  <div class="cta"><a href="#feedback">Попробовать бесплатно</a></div>
+</section>
+
+<section class="features">
+  <div class="feature"><h3>Мгновенные ответы</h3><p>Первое сообщение клиенту в первые секунды — даже когда вы офлайн.</p></div>
+  <div class="feature"><h3>Поддержка мессенджеров</h3><p>Работает с Telegram и вскоре — WhatsApp через шлюз.</p></div>
+  <div class="feature"><h3>Настройка без кода</h3><p>Простая форма — настройка и запуск за пару минут.</p></div>
+  <div class="feature"><h3>История запросов</h3><p>Смотрите, кто писал и когда бот ответил. Аналитика под рукой.</p></div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Тарифы</h2>
+  <div class="plan"><h3>Free</h3><p class="price">0 ₽ / мес</p><p>1 бот, до 100 автоответов, простая аналитика</p></div>
+  <div class="plan"><h3>Pro</h3><p class="price">1000 ₽ / мес</p><p>До 3 ботов, вложения, безлимитный трафик</p></div>
+  <div class="plan"><h3>Agency</h3><p class="price">от 5000 ₽ / мес</p><p>White‑label, мультиаккаунты, брендинг</p></div>
+</section>
+
+<section class="feedback-form" id="feedback">
+  <h2>Получите доступ первым</h2>
+  <p>Оставьте заявку — первым пришлём beta‑доступ и специальное предложение.</p>
+  <form action="https://formsubmit.co/mpv1sion@yandex.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <input type="email" name="email" placeholder="Email для связи" required>
+    <textarea name="message" placeholder="Кратко о вашей нише (необязательно)"></textarea>
+    <button type="submit">Оставить заявку</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 QuickReplyBot. Свяжитесь с нами: contact@quickreplybot.ru</p>
+</footer>
+
+</body>
+</html>
