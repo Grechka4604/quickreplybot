@@ -83,14 +83,6 @@
     e.preventDefault();
 
     const formData = new FormData(this);
-    fetch("https://api.telegram.org/bot7502573286:AAFJj5aJxbm6YWzcljiW9j_qGz1pc7jtya0/sendMessage", {
-      method: "POST",
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: "538847181",
-        text: `📝 Новая заявка с сайта\nИмя: ${name}\nEmail: ${email}\nКомментарий: ${message}`
-      })
-    });
 
     fetch("https://formsubmit.co/is4512189@gmail.com", {
       method: "POST",
@@ -111,7 +103,14 @@
       alert("Произошла ошибка: " + error);
     });
   });
-  
+  fetch("https://api.telegram.org/bot7502573286:AAFJj5aJxbm6YWzcljiW9j_qGz1pc7jtya0/sendMessage", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: "538847181",
+        text: `📝 Новая заявка с сайта\nИмя: ${name}\nEmail: ${email}\nКомментарий: ${message}`
+      })
+    });
 </script>
 
 </body>
