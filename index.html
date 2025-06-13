@@ -30,6 +30,7 @@
     form { max-width: 400px; margin: 0 auto; }
     input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
     button { background: #007bff; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    .success-message { color: green; margin-top: 20px; display: none; }
     footer { padding: 20px; text-align: center; font-size: 14px; background: #eef1f5; }
     @media (max-width: 600px) { .features { flex-direction: column; } }
   </style>
@@ -53,28 +54,62 @@
   <div class="feature"><h3>История запросов</h3><p>Смотрите, кто писал и когда бот ответил. Аналитика под рукой.</p></div>
 </section>
 
+<section class="demo">
+  <h2>Как это выглядит</h2>
+  <p>Скриншот с демонстрацией автоответа QuickReplyBot в Telegram после первого сообщения клиента.</p>
+  <img src="images/demo-chat.png" alt="Демонстрационный чат с автоответом">
+</section>
+
 <section class="pricing" id="pricing">
   <h2>Тарифы</h2>
   <div class="plan"><h3>Free</h3><p class="price">0 ₽ / мес</p><p>1 бот, до 100 автоответов, простая аналитика</p></div>
-  <div class="plan"><h3>Pro</h3><p class="price">1000 ₽ / мес</p><p>До 3 ботов, вложения, безлимитный трафик</p></div>
-  <div class="plan"><h3>Agency</h3><p class="price">от 5000 ₽ / мес</p><p>White‑label, мультиаккаунты, брендинг</p></div>
+  <div class="plan"><h3>Pro</h3><p class="price">300 ₽ / мес</p><p>До 3 ботов, вложения, безлимитный трафик</p></div>
+  <div class="plan"><h3>Agency</h3><p class="price">от 2000 ₽ / мес</p><p>White‑label, мультиаккаунты, брендинг</p></div>
 </section>
 
 <section class="feedback-form" id="feedback">
   <h2>Получите доступ первым</h2>
   <p>Оставьте заявку — первым пришлём beta‑доступ и специальное предложение.</p>
-  <form action="https://formsubmit.co/mpv1sion@yandex.com" method="POST">
+  <form id="contact-form">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Ваше имя" required>
     <input type="email" name="email" placeholder="Email для связи" required>
     <textarea name="message" placeholder="Кратко о вашей нише (необязательно)"></textarea>
     <button type="submit">Оставить заявку</button>
+    <div class="success-message" id="success-message">Спасибо! Заявка отправлена.</div>
   </form>
 </section>
 
 <footer>
   <p>© 2025 QuickReplyBot. Свяжитесь с нами: contact@quickreplybot.ru</p>
 </footer>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("https://formsubmit.co/mpv1sion@yandex.com", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('success-message').style.display = 'block';
+        this.reset();
+      } else {
+        alert("Ошибка при отправке формы. Пожалуйста, попробуйте позже.");
+      }
+    })
+    .catch(error => {
+      alert("Произошла ошибка: " + error);
+    });
+  });
+</script>
 
 </body>
 </html>
